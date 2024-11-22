@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- cssファイルの読み込み -->
+    <link rel=stylesheet href="../static/css/style.css">
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="../static/images/logo_icon.ico">
+
+    <title>居酒屋NAVI</title>
+    <script>
+        async function handleClick() {
+            const response = await fetch('/result_more');
+            const count = await response.text();
+            document.getElementById('count').textContent = count;
+        }
+
+        async function handleBack() {
+            const response = await fetch('/result_less');
+            const count = await response.text();
+            document.getElementById('count').textContent = count;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href='/'>居酒屋N<span class="fontred">A</span>V<span class="fontred">I</span></a>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="/#concept">CONCEPT</a></li>
+                <li><a href="/#about">ABOUT AI</a></li>
+                <li><a href="/#function">FUNCTION</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- templateの継承部分 -->
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer_logo">
+            <p><span>このサイトに掲載している情報は食べログの情報をもとにしています。</span></p>
+            <p><span>掲載している店舗以外にも沢山の名店がございますので、お時間がある際は是非探してみてください。</span></p>
+            <br>   
+            <p>
+                <span>※お知らせ※</span>
+                <br>
+                <span>このサイトでは福岡市・天神周辺の居酒屋を</span>
+                <span>取り扱っています。</span>
+                <span>次は岡山・倉敷バージョンを制作する予定です。</span>
+            </p>
+        </div>
+        <div class="footer_logo">©︎ サイト管理人</div>
+    </footer>
+</body>
+</html>

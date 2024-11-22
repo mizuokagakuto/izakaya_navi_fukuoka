@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+    <section class="top">
+        <div class="toplogo"><img src="../static/images/logo_opacity.png" ></div>
+        <div class="slide-container">
+            <div class="slide-wrapper">
+                <img class="slide" src="../static/images/top1.jpg">
+                <img class="slide" src="../static/images/top2.jpg" >
+                <img class="slide" src="../static/images/top3.jpg" >
+                <img class="slide" src="../static/images/top4.jpg" >
+                <img class="slide" src="../static/images/top5.jpg" >
+                <img class="slide" src="../static/images/top6.jpg">
+            </div>
+            <div class="slide-wrapper">
+                <img class="slide" src="../static/images/top1.jpg">
+                <img class="slide" src="../static/images/top2.jpg" >
+                <img class="slide" src="../static/images/top3.jpg" >
+                <img class="slide" src="../static/images/top4.jpg" >
+                <img class="slide" src="../static/images/top5.jpg" >
+                <img class="slide" src="../static/images/top6.jpg">
+            </div>
+            <div class="slide-wrapper">
+                <img class="slide" src="../static/images/top1.jpg">
+                <img class="slide" src="../static/images/top2.jpg" >
+                <img class="slide" src="../static/images/top3.jpg" >
+                <img class="slide" src="../static/images/top4.jpg" >
+                <img class="slide" src="../static/images/top5.jpg" >
+                <img class="slide" src="../static/images/top6.jpg">
+            </div>    
+        </div>
+        <div class="click_btn">
+            <h3>今すぐ探したい方はこちら</h3>
+            <a  href = "/calc">居酒屋を探す</a>
+        </div>
+    </section >
+    <section  class="concept" id="concept">
+        <div class="navi_tytle">
+            <img src="../static/images/concept2.png" alt="">
+        </div>
+        <div class="content_wrapper">
+            <div class="content_back"></div>
+            <div class="content_wrapper2">
+                <div class="content_text">
+                    <div class="content_text2">
+                        <h2><span>楽で、</span><span>正確な、</span><span>居酒屋探しを</span><span>福岡から</span></h2>
+                        <p>
+                            <span>「会社の飲み会の幹事を任されたけど、</span>
+                            <span>　忙しから時間が取れない」</span>
+                            <br>
+                            <span>「サークルの歓迎会で</span>
+                            <span>　様々な意見を踏まえて店を選びたい」</span>
+                            <br>
+                            <span class="bold">「時間はないけど実際に評価されている店を</span><span class="bold">　選びたい」</span>
+                            <br>
+                            <span>そんな時に使えるサービスが欲しくて</span>
+                            <span>このサイトを作りました。</span>
+                        </p>
+    
+                        <p>
+                            <span>口コミに投稿された、”リアルな情報”を</span>
+                            <span>解析することで、信頼性の高い指標を作成</span>
+                            <span>しました。</span>
+                            <span>それらの指標を基に目的に合わせて</span>
+                            <span>居酒屋を選べます。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="content_pictures">
+                    <div class="content_picture"><img src="../static/images/concept_image1.avif" ></div>
+                    <div class="content_picture"><img src="../static/images/concept_image2_3.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </section >
+    <section  class="about" id="about">
+        <div class="navi_tytle_invert">
+            <img src="../static/images/about2.png" alt="">
+        </div>
+        <div class="content_wrapper_invert">
+            <div class="content_back_invert"></div>
+            <div class="content_wrapper2">
+                <div class="content_pictures">
+                    <div class="content_picture"><img src="../static/images/about_image2.webp" alt=""></div>
+                    <div class="content_picture"><img src="../static/images/about_image1.jpg" alt=""></div>
+                </div>
+                <div class="content_text">
+                    <h2><br><span>AIを用いた</span><span>口コミの感情分析</span></h2>
+                    <p><span>福岡・天神を中心に600店舗、</span><span>累計2万件以上の口コミの感情を分析。</span></p>
+
+                    <p><span>どれだけポジティブな口コミが多いか</span><span>数値化を実現しました</span></p>
+
+                    <p><span>「抱いていたイメージと違った」</span><br><span>そんな経験を未然に防ぐ、</span><span>失敗しない居酒屋選びをAIがサポートします。</span></p>
+                </div>
+            </div>
+        </div>
+    </section > 
+    <section  class="function" id="function">
+        <div class="navi_tytle">
+            <img src="../static/images/function2.png" alt="">
+        </div>
+        <div class="function_wrapper">
+            <h1>以下の指標から、目的に合わせて居酒屋をピックアップ</h1>
+            <div class="function_back"></div>
+            <div class="functions">
+                <div class="function_item">
+                    <div class="function_picture">
+                        <img src="../static/images/AI_image.jpg" alt=""></div>
+                    <div class="function_text">
+                        <h3><span>ポジネガ度</span></h3>
+                        <p>
+                            <span class="bold">文字列のポジティブ度、</span>
+                            <span class="bold">ネガティブ度を数値化するAI</span>
+                            <span>(自然言語処理)</span>
+                            <span>を用いて口コミの</span>
+                            <span>感情を解析・数値化。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="function_item">
+                    <div class="function_picture">
+                        <img src="../static/images/satisfy_image.jpg" alt=""></div>
+                    <div class="function_text">
+                        <h3><span>レビュー満足度</span></h3>
+                        <p>
+                            <span>各店舗の口コミに対して</span>
+                            <br>
+                            <span class="bold">"おすすめ"、"絶品"、</span>
+                            <span class="bold">"また来たい"、</span>
+                            <br>
+                            <span>などの単語の</span><span>登場割合を求め、</span>
+                            <span>満足度を数値化。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="function_item">
+                    <div class="function_picture">
+                        <img src="../static/images/insta_image.jpg" alt=""></div>
+                    <div class="function_text">
+                        <h3><span>インスタ映え</span></h3>
+                        <p>
+                            <span>各店舗の口コミに対して</span>
+                            <br>
+                            <span class="bold">"お洒落"、"センスが良い"、</span>
+                            <span class="bold">"インスタ映えする"、</span>
+                            <span>などの単語の</span><span>登場割合を求め、</span>
+                            <span>”お洒落”を数値化。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="function_item">
+                    <div class="function_picture">
+                        <img src="../static/images/calm_image.jpg" alt=""></div>
+                    <div class="function_text">
+                        <h3><span>落ち着き</span></h3>
+                        <p>
+                            <span>各店舗の口コミに対して</span>
+                            <br>
+                            <span class="bold">"落ち着いた"、"大人の"、</span>
+                            <span class="bold">"隠れ家"、”ゆったり”</span>
+                            <span>などの単語の</span><span>登場割合を求め、</span>
+                            <span>”落ち着き”を数値化。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="function_item">
+                    <div class="function_picture">
+                        <img src="../static/images/service_image.jpg" alt=""></div>
+                    <div class="function_text">
+                        <h3><span>サービス</span></h3>
+                        <p>
+                            <span>各店舗の口コミに対して</span>
+                            <br>
+                            <span class="bold">"元気"、"丁寧な対応"、</span>
+                            <span class="bold">"提供が早い"、</span>
+                            <span>などの単語の</span><span>登場割合を求め、</span>
+                            <span>”サービス”を数値化。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="function_item">
+                    <div class="function_picture">
+                        <img src="../static/images/star_image.jpg" alt=""></div>
+                    <div class="function_text">
+                        <h3><span>食べログ★</span></h3>
+                        <p>
+                            <span>食べログの評価も</span>
+                            <span>評価指標に組み込んでいます。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section >
+    <section  class="page_move" id="page_move">
+        <h1>ぜひ使ってみてください</h1>
+        <div class="click_btn">
+            <a  href = "/calc">居酒屋を探す</a>
+        </div>
+    </section >
+</main>
+
+{% endblock %}

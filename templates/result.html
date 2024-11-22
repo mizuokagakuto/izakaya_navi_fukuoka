@@ -1,0 +1,270 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="result_main">
+  {% if output["len"]-output["pickup_count"] >=1 %}
+  <div class="result_item" id="result1">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+1 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][0]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][0]}}" target="_blank">
+      <img src="{{output["picture_url"][0]}}" alt="">
+    </a>
+    <p>
+      <span class="bold">場所</span>：<span class="bold">{{output["place_list"][0]}}</span>　　　
+      <span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][0]}}</span>　　　
+    </p>
+  </div>
+  <div class="result_navi">
+    {% if output["pickup_count"] != 0 %}
+    <div class="result_btn3" >
+      <form action="/result_less" method="POST">
+        <button onclick="handleBack()">前のページに戻る</button>
+      </form>
+    </div>
+    {% else %}
+    <div class="result_btn3" >
+      <a href="/calc">前のページに戻る</a>
+    </div>  
+    {% endif %} 
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][0]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result2" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=2 %}
+  <div class="result_item" id="result2">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+2 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][1]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][1]}}" target="_blank">
+      <img src="{{output["picture_url"][1]}}" alt="">
+    </a>
+    <p>
+      <span class="bold">場所</span>：<span class="bold">{{output["place_list"][1]}}</span>　　　
+      <span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][1]}}</span>　　　
+    </p>
+  </div>
+  <div class="result_navi" >
+    <div class="result_btn3" >
+      <a href="/result#result1" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][1]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result3" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=3 %}
+  <div class="result_item" id="result3">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+3 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][2]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][2]}}" target="_blank">
+      <img src="{{output["picture_url"][2]}}" alt="">
+    </a>
+    <p>
+      <span class="bold">場所</span>：<span class="bold">{{output["place_list"][2]}}</span>　　　
+      <span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][2]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result2" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][2]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result4" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=4 %}
+  <div class="result_item" id="result4">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+4 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][3]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][3]}}" target="_blank">
+      <img src="{{output["picture_url"][3]}}" alt="">
+    </a>
+    <p>
+      <span class="bold">場所</span>：<span class="bold">{{output["place_list"][3]}}</span>　　　
+      <span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][3]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result3" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][3]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result5" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=5 %}
+  <div class="result_item" id="result5">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+5 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][4]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][4]}}" target="_blank">
+      <img src="{{output["picture_url"][4]}}" alt="">
+    </a>
+    <p>
+      <span class="bold">場所</span>：<span class="bold">{{output["place_list"][4]}}</span>　　　
+      <span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][4]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result4" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][4]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result6" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=6 %}
+  <div class="result_item" id="result6">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+6 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][5]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][5]}}" target="_blank">
+      <img src="{{output["picture_url"][5]}}" alt="">
+    </a>
+    <p><span class="bold">場所</span>：<span class="bold">{{output["place_list"][5]}}</span>　　　<span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][5]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result5" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][5]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result7" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=7 %}
+  <div class="result_item" id="result7">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+7 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][6]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][6]}}" target="_blank">
+      <img src="{{output["picture_url"][6]}}" alt="">
+    </a>
+    <p><span class="bold">場所</span>：<span class="bold">{{output["place_list"][6]}}</span>　　　<span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][6]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result6" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][6]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result8" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=8 %}
+  <div class="result_item" id="result8">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+8 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][7]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][7]}}" target="_blank">
+      <img src="{{output["picture_url"][7]}}" alt="">
+    </a>
+    <p><span class="bold">場所</span>：<span class="bold">{{output["place_list"][7]}}</span>　　　<span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][7]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result7" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][7]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result9" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=9 %}
+  <div class="result_item" id="result9">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+9 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][8]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][8]}}" target="_blank">
+      <img src="{{output["picture_url"][8]}}" alt="">
+    </a>
+    <p><span class="bold">場所</span>：<span class="bold">{{output["place_list"][8]}}</span>　　　<span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][8]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result8" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][8]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result10" class="jump_point">次の候補を見る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["len"]-output["pickup_count"] >=10 %}
+  <div class="result_item" id="result10">
+    <div class="result_name">
+      <h2><span>あなたの気分に<span id="count">{{ output["pickup_count"]+10 }}</span>番目に近いのは</span><span class="bold">「{{output["store_name"][9]}}」</span></h2>
+    </div>
+    <a class="result_btn" href="{{output["link_url"][9]}}" target="_blank">
+      <img src="{{output["picture_url"][9]}}" alt="">
+    </a>
+    <p><span class="bold">場所</span>：<span class="bold">{{output["place_list"][9]}}</span>　　　<span class="bold">口コミ予算</span>：<span class="bold">{{output["range_money"][9]}}</span>　　　</p>
+  </div>
+  <div class="result_navi">
+    <div class="result_btn3" >
+      <a href="/result#result9" class="jump_point">前の候補に戻る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="{{output["link_url"][9]}}" target="_blank">食べログを見る</a>
+    </div>
+    <div class="result_btn3" >
+      <a href="/result#result1" class="jump_point">ページの先頭に戻る</a>
+    </div>
+  </div>
+  {% endif %}
+  {% if output["pickup_count"] > output["len"] %}
+  <p>この条件の居酒屋は他にありません</p>
+  {% endif %}
+  <section class="endpage">
+    {% if output["pickup_count"] != 0 %}
+    <div class="result_btn2" >
+      <form action="/result_less" method="POST">
+        <button onclick="handleBack()">前のページに戻る</button>
+      </form>
+    </div>
+    {% else %}
+    <div class="result_btn2" >
+      <a href="/calc">前のページに戻る</a>
+    </div>  
+    {% endif %} 
+    <div class="result_btn2" >
+      <form action="/result_more" method="POST">
+        <button onclick="handleClick()">次のページを見る</button>
+      </form>
+    </div>   
+    <div class="result_btn2" >
+      <a href="/calc">重要度を編集</a>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

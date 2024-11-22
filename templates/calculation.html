@@ -1,0 +1,124 @@
+<!----------------問題２-------------->
+{% extends "layout.html" %}
+{% block content %}
+<main>
+    <form action="/calc" method="POST">
+        <section class="calc_wrapper">
+            <h2>こだわり条件をカスタマイズ</h2>
+            <div class="calc_item">
+                <div class="calc_img"><img src="../static/images/AI_image.jpg" alt=""></div>
+                <div class="calc_func">
+                    <h3>ポジネガ度　~AIで感情分析~</h3>
+                    <p>
+                        <label>
+                            <span>重視しない</span>
+                            <input type="range" class="input-range" name="pozi_nega_rank" min="0" max="1" step="0.01" value="0.5">
+                            <span>重視する</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="calc_item">
+                <div class="calc_img"><img src="../static/images/satisfy_image.jpg" alt=""></div>
+                <div class="calc_func">
+                    <h3>レビュー満足度</h3>
+                    <p>
+                        <label>
+                            <span>重視しない</span>
+                            <input type="range" class="input-range" name="satisfy_rank" min="0" max="1" step="0.01" value="0.5">
+                            <span>重視する</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="calc_item">
+                <div class="calc_img"><img src="../static/images/insta_image.jpg" alt=""></div>
+                <div class="calc_func">
+                    <h3>インスタ映え</h3>
+                    <p>
+                        <label>
+                            <span>重視しない</span>
+                            <input type="range" class="input-range" name="insta_rank" min="0" max="1" step="0.01" value="0.5">
+                            <span>重視する</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="calc_item">
+                <div class="calc_img"><img src="../static/images/calm_image.jpg" alt=""></div>
+                <div class="calc_func">
+                    <h3>落ち着き</h3>
+                    <p>
+                        <label>
+                            <span>重視しない</span>
+                            <input type="range" class="input-range" name="calm_rank" min="0" max="1" step="0.01" value="0.5">
+                            <span>重視する</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="calc_item">
+                <div class="calc_img"><img src="../static/images/service_image.jpg" alt=""></div>
+                <div class="calc_func">
+                    <h3>サービス</h3>
+                    <p>
+                        <label>
+                            <span>重視しない</span>
+                            <input type="range" class="input-range" name="service_rank" min="0" max="1" step="0.01" value="0.5">
+                            <span>重視する</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="calc_item">
+                <div class="calc_img"><img src="../static/images/star_image.jpg" alt=""></div>
+                <div class="calc_func">
+                    <h3>食べログ★</h3>
+                    <p>
+                        <label>
+                            <span>重視しない</span>
+                            <input type="range" class="input-range" name="star_rank" min="0" max="1" step="0.01" value="0.5" >
+                            <span>重視する</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </section>
+    <!----------------------------------->
+        <section class="narrow_wrapper">
+            <h2>予算・場所を絞る</h2>
+            <div class="narrow">
+                <select name="money" id="money-narrow" class="cp_sl06">
+                    <option value="1000">~1000円</option>
+                    <option value="2000">1000円~2000円</option>
+                    <option value="3000">2000円~3000円</option>
+                    <option value="4000">3000円~4000円</option>
+                    <option value="5000">4000円~5000円</option>
+                    <option value="6000">5000円~6000円</option>
+                    <option value="8000">6000円~8000円</option>
+                    <option value="10000">8000円~10000円</option>
+                    <option value="15000">10000円~15000円</option>
+                    <option value="20000">15000円~20000円</option>
+                    <option value="30000">20000円~30000円</option>
+                    <option value="all">金額で絞らない</option>
+                </select>
+                <span class="cp_sl06_selectbar"></span>
+                <label for="money-narrow" class="cp_sl06_selectlabel">予算で絞る(※口コミをもとに表示)</label>
+            </div>
+            <div class="narrow">
+                <select name="place" id="place-narrow" class="cp_sl06">
+                    <option value="天神">天神</option>
+                    <option value="大名">大名</option>
+                    <option value="中州">中州</option>
+                    <option value="all">場所で絞らない</option>
+                </select>
+                <span class="cp_sl06_selectbar"></span>
+                <label for="place-narrow" class="cp_sl06_selectlabel">場所で絞る</label>
+            </div>
+        </section>
+        <div class="click_btn">
+            <input type="submit" value='お店を見つける'>
+        </div>
+    </form>
+</main>
+{% endblock %}
