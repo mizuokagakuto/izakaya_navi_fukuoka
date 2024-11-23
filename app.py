@@ -80,6 +80,7 @@ def result_more():
     # 結果を表示
     return render_template("result.html", output=output, count=count)
 
+
 @app.route("/result_less", methods=["POST"])  # クリックして結果を更新
 def result_less():
     # クリック数を増加
@@ -98,4 +99,4 @@ def result_less():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
