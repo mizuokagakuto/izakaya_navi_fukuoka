@@ -1,10 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from calculation import calculate_weightedsum
 from flask_session import Session
+from redis import Redis
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "your_secret_key"  # セッションデータ暗号化用のキー
-app.config["SESSION_TYPE"] = "filesystem"  # セッションデータをファイルに保存
+app.config["SESSION_TYPE"] = "redis"
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_USE_SIGNER"] = True
+app.config["SESSION_KEY_PREFIX"] = "session:"
+app.config["SESSION_REDIS"] = Redis(
+    host="your_redis_host", port=6379, password="your_password"
+)
 Session(app)
 
 
