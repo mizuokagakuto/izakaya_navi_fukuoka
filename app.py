@@ -5,6 +5,9 @@ from redis import Redis
 import os
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "your_secret_key"  # セッションデータ暗号化用のキー
+app.config["SESSION_TYPE"] = "filesystem"  # セッションデータをファイルに保存
+Session(app)
 """
 app.config["SESSION_TYPE"] = "redis"
 app.config["SESSION_PERMANENT"] = False
@@ -15,13 +18,14 @@ app.config["SESSION_REDIS"] = Redis(
 )
 Session(app)
 """
+"""#これを試したい
 app.config["SECRET_KEY"] = "your_secret_key"  # セッションデータ暗号化用のキー
 redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")  # Redisクライアントを作成
 redis_client = Redis.from_url(redis_url)  # Flask-Sessionの設定
 app.config["SESSION_TYPE"] = "redis"
 app.config["SESSION_REDIS"] = redis_client
 Session(app)
-
+"""
 
 @app.route("/")
 def index():
