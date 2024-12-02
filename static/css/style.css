@@ -621,8 +621,6 @@ select {
   width: 80%;
   display: inline-block;
   text-align: center;
-  padding-top: 60px;
-  margin-top:-60px;
 }
 .result_item h2 {
   margin: 10px auto;
@@ -640,10 +638,13 @@ select {
 }
 .result_btn{
   display: inline-block;
-  width: 100%;
+  overflow: hidden;
+  width: 22vw;
+  padding: 0;
 }
 .result_item img:hover {
-  opacity: 0.8;
+  transform:scale(1.1,1.1);
+  transition:1s all;
 }
 .result_btn img{
   margin: 0 auto;
