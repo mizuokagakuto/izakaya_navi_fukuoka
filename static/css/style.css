@@ -31,6 +31,11 @@ header {
   z-index: 30;
   display: flex;
 }
+@media (max-width: 480px) {
+  header {
+    background-color: lightblue;
+  }
+}
 
 .logo {
   font-size: 25px;
