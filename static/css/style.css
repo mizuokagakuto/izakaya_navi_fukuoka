@@ -31,17 +31,21 @@ header {
   z-index: 30;
   display: flex;
 }
-@media (max-width: 480px) {
-  header {
-    background-color: lightblue;
-  }
+.hamburger-btn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  display: none; /* デフォルトは非表示（PC向け） */
 }
 
 .logo {
   font-size: 25px;
 }
 
-nav {
+.menu {
+  display: flex; /* PCでは常に表示 */
   margin: 0 0 0 auto;
 }
 
@@ -69,6 +73,61 @@ span {
   color: #fc6262;
 }
 
+@media (max-width: 480px) {
+  header {
+    padding: 0px;
+    border-bottom: rgb(191, 189, 189) 1px solid;
+    position: relative; /* メニューの基準位置 */
+  }
+
+  /* ハンバーガーメニューのボタンを表示 */
+  .hamburger-btn {
+    display: block; /* スマホで表示 */
+    margin-left: auto; 
+    position: absolute;
+    top: 50%;
+    right: 10px; /* 右端に固定 */
+    transform: translateY(-50%);
+  }
+
+  /* ナビゲーションメニューのスタイル（デフォルト非表示） */
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* 非表示時はクリック不可 */
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #626262;
+  }
+  .menu ul {
+    position: absolute;
+    left: 0;
+    background: white;
+    opacity: 0.95;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /* スマホのナビゲーションリンク */
+  .menu a {
+    color: black;
+    padding: 5px;
+    display: block;
+    border-bottom: 1px solid #626262;
+  }
+  .menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
 /* *********************************　
 mainの設定
 *********************************** */
@@ -82,7 +141,11 @@ main {
 .result_main{
   padding-top: 60px;
 }
-
+@media (max-width: 480px) {
+  main{
+    padding: 0px;
+  }
+}
 /* *********************************　
 topの設定
 *********************************** */

@@ -33,6 +33,7 @@
             <a href='/'>居酒屋N<span class="fontred">A</span>V<span class="fontred">I</span></a>
         </div>
 
+        <button class="hamburger-btn">&#9776;</button>
         <nav class="menu">
             <ul>
                 <li><a href="/#concept">CONCEPT</a></li>
@@ -41,6 +42,7 @@
             </ul>
         </nav>
     </header>
+    
 <!-- templateの継承部分 -->
     {% block content %}
     {% endblock %}
@@ -59,5 +61,6 @@
         </div>
         <div class="footer_logo">©︎ サイト管理人</div>
     </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
