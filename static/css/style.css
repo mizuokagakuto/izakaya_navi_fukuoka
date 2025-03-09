@@ -171,6 +171,12 @@ topの設定
   opacity: 0.5;
 }
 
+@media (max-width: 480px)  {
+  .toplogo {
+    display: none;
+  }
+}
+
 /*　*******************topのスライドショー******************/
 .slide-container {
   width: 100%;
@@ -190,6 +196,23 @@ topの設定
   object-fit:cover;
   border: 1px solid #ddd;
 }
+
+@media (max-width: 480px) {
+  .slide-container {
+    width: 100%;
+    margin: 0px auto;
+    /*margin-topを削除*/
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .slide{
+    width: 66vw;
+    object-fit:cover;
+    border: 1px solid #ddd;
+  }
+}
+
 @keyframes slide-flow {
   0% {transform: translateX(0);}
   100% {transform: translateX(-100%);}
@@ -234,6 +257,34 @@ topの設定
   margin-bottom: 50px;
 }
 
+@media (max-width: 480px) {
+  .click_btn {
+    margin: 25px 0px;
+  }
+  .click_btn [type="submit"] {
+    width: 80vw;
+    border-bottom: 0;
+    border-top: 0;
+  }
+  .click_btn h3 {
+    margin-bottom: 10px;
+  }
+  .click_btn a {
+    width: 80vw;
+    background-color: rgb(255, 217, 217);
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, .3),
+    0px 5px 10px rgba(255,255,255,0.75) inset;
+    border-bottom: 0;
+    border-top: 0;
+  }
+  .click_btn a:hover {
+    background-color: rgb(255, 217, 217)
+  }
+  .click_btn input:hover {
+    background-color: rgb(255, 217, 217)
+  }
+}
+
 /* *********************************　
 conceptの設定
 *********************************** */
@@ -250,6 +301,19 @@ conceptの設定
   height: auto;
   opacity: 0.1;
 }
+
+@media (max-width: 480px){
+  .concept {
+    margin: 20px auto;
+  }
+  .navi_tytle {
+    width: 30%;
+    margin: 10px auto;
+  }
+  .navi_tytle img{
+    opacity: 0.3;
+}}
+
 .content_wrapper{
   position: relative;
   width: 90%;
@@ -275,6 +339,28 @@ conceptの設定
   justify-content: space-between;
   /* background-color: yellow; */
 }
+
+@media(max-width:480px){
+  .content_back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 95%;
+    background-color: #f7e7e7;
+    margin-top: 0%;
+    z-index: -1;
+  }
+  
+  .content_wrapper2{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    /* background-color: yellow; */
+  }
+}
+
 .content_text{
   z-index: 5;
   width: 47%;
@@ -283,6 +369,43 @@ conceptの設定
   overflow: hidden;
   margin: auto 0;
   /* background-color: aqua; */
+}
+.baroon {
+  position: relative;
+  display: inline-block;
+  margin: 1em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.baroon:before {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-top: 13px solid #FFF;
+  z-index: 2;
+}
+
+.baroon:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid #555;
+  z-index: 1;
+}
+.smartphone_title {
+  display: none;
 }
 .content_pictures{
   display: flex;
@@ -318,6 +441,52 @@ conceptの設定
     font-size: 14px;
   }
 }
+@media (max-width: 480px){
+  .content_text{
+    z-index: 5;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin: auto 5vw;
+    /* background-color: aqua; */
+  }
+  .content_text h2 {
+    display: none;
+  }
+
+  .smartphone_title {
+    position: relative;
+    display: block;
+    width: 90%;
+    text-align: center;
+    font-size: 11px;
+    margin: auto 5vw;
+    z-index: 11;
+  }
+  .content_pictures{
+    display: flex;
+    align-items: stretch;
+    z-index: 5;
+    width: 100%;
+    height: auto;
+    /* background-color: aquamarine; */
+  }
+  .content_picture {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    margin:0 ;
+    height: auto;
+  }
+  .content_picture img{
+    width:100%;
+    height: 100%;
+    object-fit:cover;
+    opacity: 0.9;
+  }
+}
+
+
 /* *********************************　
 aboutAIの設定
 *********************************** */
@@ -335,6 +504,7 @@ aboutAIの設定
   height: auto;
   opacity: 0.1;
 }
+
 .content_wrapper_invert{
   position: relative;
   width: 90%;
@@ -353,6 +523,11 @@ aboutAIの設定
   margin-top: -35px;
   z-index: -1;
 }
+.content_wrapper2_invert {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 @media (max-width: 1700px) {
   .content_wrapper_invert{
     position: relative;
@@ -362,6 +537,38 @@ aboutAIの設定
     padding-bottom: 40px;
     z-index: 10;
     /* background-color: aqua; */
+  }
+}
+@media (max-width: 480px){
+  .about{
+    margin: 15px auto;
+  }
+  .navi_tytle_invert {
+    width: 30%;
+    margin: 10px auto;
+  }
+  .navi_tytle_invert img{
+    opacity: 0.3;
+}}
+@media(max-width:480px){
+
+  .content_back_invert {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 85%;
+    background-color: #f7e7e7;
+    margin-top: 10%;
+    z-index: -1;
+  }
+  
+  .content_wrapper2_invert{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: yellow; */
   }
 }
 /* *********************************　
@@ -407,6 +614,7 @@ functionの設定
   background-color: white;
   border: rgb(191, 189, 189) 1px solid;
 }
+
 .function_picture {
   width: 100%;
   height: auto;
@@ -418,6 +626,7 @@ functionの設定
   height: 13vw;
   object-fit:cover;
 }
+
 .function_text{
   z-index: 5;
   width: 13vw;
@@ -495,10 +704,72 @@ functionの設定
     /* background-color: aqua; */
   }
 }
+@media(max-width:480px){
+  .function_wrapper h1 {
+    font-size: 14px;
+  }
+  .function_back {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 80%;
+    background-color: #f7e7e7;
+    z-index: 1;
+  }
+  .functions{
+    position: relative;
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    /* background-color: #985267; */
+  }
+  .function_item{
+    display: flex;
+    flex-flow: row;
+    /* z-index: 30; */
+    width: 100%;
+    background-color: white;
+    border: rgb(191, 189, 189) 1px solid;
+    }
+  
+  .function_picture {
+    width: 30vw;
+    height: auto;
+    /* background-color: blue; */
+    margin:auto;
+  }
+  .function_picture img{
+    display: block;
+    width: 30vw;
+    height: 30vw;
+    object-fit:cover;
+    margin: 10px auto;
+  }
+  .function_text{
+    z-index: 5;
+    width: 70vw;
+    margin: 0 auto;
+    text-align: center;
+    margin: auto;
+    /* background-color: aqua; */
+  }
+}
 
 .page_move{
   padding-bottom: 40px;
   padding-top: 40px;
+}
+@media (max-width:480px) {
+  .page_move{
+    padding: 0;
+  }
+  .page_move h1 {
+    font-size: 1.17em;
+  }
 }
 /* ****************************
 ****************************
@@ -837,6 +1108,7 @@ footer {
   border-top: rgb(191, 189, 189) 1px solid;
 }
 .footer_logo {
+  width: 80%;
   margin: 10px auto;
 }
 .footer_logo p {
