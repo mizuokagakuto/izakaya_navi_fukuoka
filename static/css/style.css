@@ -1116,7 +1116,7 @@ select {
   font-size: 17px;
 }
 .result_name {
-  width: 100%;
+  width: 80%;
   max-width: 600px;
   border-bottom: black 3px  solid;
   border-top: black 3px  solid;
@@ -1278,7 +1278,7 @@ select {
     font-size: 13px;
   }
   .result_name {
-    width: 64%;
+    width: 80%;
     border-bottom: black 3px  solid;
     border-top: black 3px  solid;
     margin: 15px auto;
