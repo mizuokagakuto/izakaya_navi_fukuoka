@@ -150,6 +150,9 @@ main {
   main{
     padding: 0px;
   }
+  .result_main{
+    padding-top: 0;
+  }
 }
 /* *********************************　
 topの設定
@@ -271,6 +274,8 @@ topの設定
     border-bottom: 0;
     border-top: 0;
     border-radius: 100vh;
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    font-size: 1.3em;
   }
   .click_btn h3 {
     margin-bottom: 10px;
@@ -929,8 +934,7 @@ select {
   height: 48px;
   cursor: pointer;
   text-overflow: ellipsis;/*テキストがオーバーしたら'...'で省略*/
-  z-index: 1;
-  /* 標準のスタイルを無効にしborder-bottomを設定 */
+  z-index: 1;/* 標準のスタイルを無効にしborder-bottomを設定 */
   border: none;
   appearance: none;
   outline: none;
@@ -996,6 +1000,93 @@ select {
   width: 50%;
 }
 
+@media (max-width:480px) {
+  select {
+    text-align-last: center;
+  }
+  .narrow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto;
+    width: 90%;
+  }
+  .nallow p {
+    font-size: 100px;
+  }
+  .narrow .cp_sl06 {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    text-overflow: ellipsis;/*テキストがオーバーしたら'...'で省略*/
+    z-index: 1;/* 標準のスタイルを無効にしborder-bottomを設定 */
+    border: none;
+    appearance: none;
+    outline: none;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #666666;
+    font-size: 15px;
+    font-family: "游明朝";
+  }
+  /*プルダウンの三角を設定*/
+  .narrow::after {
+    position: absolute;
+    right: 15px;
+    content: '';
+    width: 16px;
+    height: 8px;
+    background: #666666;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+  .cp_sl06_selectlabel {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #666666;
+    transition: 0.2s ease all;
+  }
+  /*選択した際の動き:「Choose」の文字*/
+  .cp_sl06:focus ~ .cp_sl06_selectlabel,
+  .cp_sl06:valid ~ .cp_sl06_selectlabel {
+    color: #fc6262;
+    top: -20px;
+    transition: 0.2s ease all;
+    font-size: 20px;
+  }
+  /*選択した際の動き:セレクト下のライン*/
+  .cp_sl06_selectbar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .cp_sl06_selectbar:before,
+  .cp_sl06_selectbar:after {
+    bottom: 1px;
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background: #fc6262;
+    transition: 0.2s ease all;
+  }
+  .cp_sl06_selectbar:before {
+    left: 50%;
+  }
+  .cp_sl06_selectbar:after {
+    right: 50%;
+  }
+  /*focus時の設定*/
+  .narrow .cp_sl06:focus {
+    border-bottom: 1px solid transparent;
+  }
+  .cp_sl06:focus ~ .cp_sl06_selectbar:before,
+  .cp_sl06:focus ~ .cp_sl06_selectbar:after {
+    width: 50%;
+  }
+}
 
 /*　******************選択肢******************/
 
@@ -1024,9 +1115,13 @@ select {
 }
 .result_name {
   width: 80%;
+  max-width: 600px;
   border-bottom: black 3px  solid;
   border-top: black 3px  solid;
   margin: 20px auto;
+}
+.result_name br {
+  display: none;
 }
 .result_btn{
   display: inline-block;
@@ -1145,6 +1240,144 @@ select {
     font-size: 15px;
   }
 }
+@media (max-width: 480px) {
+  .result_navi {
+    display: none;
+  }
+  .result{
+    font-weight: bold;
+    color: rgb(246, 123, 123);
+    font-size:24px;
+  }
+  .result_main {
+    background-color: #f7efe7;
+  }
+  .result_main p{
+    background-color: #fff;
+    margin: 0;
+    padding: 1em;
+  }
+  .result_item {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 2px;
+    margin: 2.5px 0;
+  }
+  .result_item h2 {
+    margin: 10px auto;
+    font-size: 15px;
+  }
+  .result_item p {
+    margin: 0 auto;
+    font-size: 13px;
+  }
+  .result_name {
+    width: 64%;
+    border-bottom: black 3px  solid;
+    border-top: black 3px  solid;
+    margin: 15px auto;
+    padding: 10px;
+  }
+  .result_name h2 {
+    font-weight: normal;
+    margin: 0;
+  }
+  .result_btn{
+    display: inline-block;
+    overflow: hidden;
+    width: 60vw;
+    padding: 0;
+  }
+  .result_item img:hover {
+    transform:scale(1.1,1.1);
+    transition:1s all;
+  }
+  .result_btn img{
+    margin: 0 auto;
+    display: block;
+    border-radius: 2px;
+    width: 60vw;
+    height: 60vw;
+    object-fit:cover;
+  }
+  .result_btn2 {
+    margin: 0 5px;
+  }
+  .result_btn2 a {
+    text-align: center;
+    margin: 10px auto;
+    padding: 1px;
+    width: 100px;
+    font-size: 13px;
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    border-radius: 100vh;
+    border: 0;
+  }
+  .result_btn2 button {
+    cursor: pointer;
+    text-align: center;
+    margin: 10px auto;
+    padding: 1px;
+    width: 100px;
+    font-size: 13px;
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    border-radius: 100vh;
+    border: 0;
+    font-family: "游明朝";
+  }
+  .result_btn3 {
+    margin: 0;
+  }
+  .result_btn3 a {
+    text-align: center;
+    margin: 10px auto;
+    padding: 1px;
+    width: 180px;
+    font-size: 13px;
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    border-radius: 100vh;
+  }
+  .result_btn3 button {
+    cursor: pointer;
+    text-align: center;
+    margin: 10px auto;
+    padding: 1px;
+    width: 180px;
+    font-size: 13px;
+    border-radius: 100vh;
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    font-family: "游明朝";
+  }
+  .bold {
+    font-weight: bold;
+  
+  }
+  .result_btn2 a:hover {
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+  }
+  .result_btn2 button:hover {
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+  }
+  .result_btn3 a:hover {
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+  }
+  .result_btn3 button:hover {
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+  }
+  .endpage {
+    padding:10px 0;
+    display: flex;
+    justify-content:center;
+    width: 100vw;
+    border-top: rgb(191, 189, 189) 1px solid;
+    margin: 0 auto;
+  }
+  .endpage span {
+    display: none;
+  }
+}
 
 /* *********************************　
 footerの設定
@@ -1168,3 +1401,4 @@ footer {
   margin: 0 auto;
   font-size: 13px;
 }
+
