@@ -291,10 +291,10 @@ topの設定
     font-size: 1.3em;
   }
   .click_btn a:hover {
-    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    background: transparent;
   }
   .click_btn input:hover {
-    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
+    background: transparent;
   }
 }
 
