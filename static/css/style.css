@@ -844,6 +844,12 @@ functionの設定
   display: inline-block;
   /* padding-bottom: 20px; */
 }
+.calc_func .responsivecalc{
+  display: none;
+}
+.calc_func .responsivecalc2{
+  display: none;
+}
 
 @media (max-width:480px) {
   .calc_wrapper h2{
@@ -879,6 +885,17 @@ functionの設定
   .calc_func h3{
     display: inline-block;
     /* padding-bottom: 20px; */
+  }
+  .calc_func .responsivecalc{
+    display: inline-block;
+  }
+  .calc_func .responsivecalc2{
+    display: block;
+    margin-top: 0;
+    text-align: center;
+  }
+  .calc_func .responsivepc{
+    display: none;
   }
 }
 /*　******************レンジスライサー******************/
