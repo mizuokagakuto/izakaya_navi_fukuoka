@@ -1155,19 +1155,25 @@ select {
 .result_btn{
   display: inline-block;
   overflow: hidden;
-  width: 22vw;
+  width: 22.5vw;
+  height: auto;
   padding: 0;
 }
-.result_item img:hover {
+.result_item div:hover {
   transform:scale(1.1,1.1);
   transition:1s all;
+}
+.result_btn div {
+  display: flex;
+  flex-wrap: wrap;
 }
 .result_btn img{
   margin: 0 auto;
   display: block;
-  border-radius: 2px;
-  width: 22vw;
-  height: 22vw;
+  border-right:solid 1px #fff;
+  border-bottom:solid 1px #fff;
+  width: 7.5vw;
+  height: 7.5vw;
   object-fit:cover;
 }
 .result_btn2 {

@@ -52,7 +52,12 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
 
     # 上位のstore_name, picture_url, link_urlを取得
     store_name = []
-    picture_url = []
+    picture_url0 = []
+    picture_url1 = []
+    picture_url2 = []
+    picture_url3 = []
+    picture_url4 = []
+    picture_url5 = []
     link_url = []
     range_money = []
     place_list = []
@@ -60,7 +65,12 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
         for i in range(0+count,sorted_df["weighted_sum"].count()):
             pickup_row = sorted_df.iloc[i]
             store_name.append(pickup_row["store_name"])
-            picture_url.append(pickup_row["picture_url"])
+            picture_url0.append(pickup_row["picture_url0"])
+            picture_url1.append(pickup_row["picture_url1"])
+            picture_url2.append(pickup_row["picture_url2"])
+            picture_url3.append(pickup_row["picture_url3"])
+            picture_url4.append(pickup_row["picture_url4"])
+            picture_url5.append(pickup_row["picture_url5"])
             link_url.append(pickup_row["link_url"])
             range_money.append(pickup_row["range_money"])
             place_list.append(pickup_row["place"])
@@ -68,14 +78,24 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
         for i in range(0+count,10+count):
             pickup_row = sorted_df.iloc[i]
             store_name.append(pickup_row["store_name"])
-            picture_url.append(pickup_row["picture_url"])
+            picture_url0.append(pickup_row["picture_url0"])
+            picture_url1.append(pickup_row["picture_url1"])
+            picture_url2.append(pickup_row["picture_url2"])
+            picture_url3.append(pickup_row["picture_url3"])
+            picture_url4.append(pickup_row["picture_url4"])
+            picture_url5.append(pickup_row["picture_url5"])
             link_url.append(pickup_row["link_url"])
             range_money.append(pickup_row["range_money"])
             place_list.append(pickup_row["place"])
 
     result = {
         "store_name": store_name,
-        "picture_url": picture_url,
+        "picture_url0": picture_url0,
+        "picture_url1": picture_url1,
+        "picture_url2": picture_url2,
+        "picture_url3": picture_url3,
+        "picture_url4": picture_url4,
+        "picture_url5": picture_url5,
         "link_url": link_url,
         "pickup_count": count,
         "len" : sorted_df["weighted_sum"].count(),
