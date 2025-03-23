@@ -811,11 +811,11 @@ functionの設定
 *************************** */
 .calc_wrapper h2{
   display: block;
-  padding-top: 60px;
+  padding-top: 20px;
 }
 .narrow_wrapper h2{
+  padding-top: 60px;
   display: block;
-  padding-top: 20px;
 }
 .calc_item {
   margin: 0 auto 20px auto;
@@ -855,9 +855,9 @@ functionの設定
 }
 
 @media (max-width:480px) {
-  .calc_wrapper h2{
-    display: block;
+  .narrow_wrapper h2{
     padding-top: 10px;
+    display: block;
   }
   .calc_item {
     margin: 0 auto 20px auto;
@@ -1253,6 +1253,18 @@ select {
 .result_btn3 button:hover {
   background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
 }
+.result_item ul {
+  text-align: center;
+  display: grid;
+  width: 300px;
+  margin: auto;
+  column-gap: 1em;
+  grid-template-columns: repeat(2, auto);
+}
+.list_contents{
+  text-align: left;
+}
+
 .result_navi {
   display: flex;
   justify-content:space-around;

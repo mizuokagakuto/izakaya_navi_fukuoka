@@ -61,6 +61,11 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
     link_url = []
     range_money = []
     place_list = []
+    posi_nega_score_re = []
+    satisfy_score_re = []
+    insta_score_re = []
+    calm_score_re = []
+    service_score_re = []    
     if sorted_df["weighted_sum"].count() - count < 10:
         for i in range(0+count,sorted_df["weighted_sum"].count()):
             pickup_row = sorted_df.iloc[i]
@@ -74,6 +79,11 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
             link_url.append(pickup_row["link_url"])
             range_money.append(pickup_row["range_money"])
             place_list.append(pickup_row["place"])
+            posi_nega_score_re.append(pickup_row["posi_nega_score_re"])
+            satisfy_score_re.append(pickup_row["satisfy_score_re"])
+            insta_score_re.append(pickup_row["insta_score_re"])
+            calm_score_re.append(pickup_row["calm_score_re"])
+            service_score_re.append(pickup_row["service_score_re"])
     else:      
         for i in range(0+count,10+count):
             pickup_row = sorted_df.iloc[i]
@@ -87,6 +97,11 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
             link_url.append(pickup_row["link_url"])
             range_money.append(pickup_row["range_money"])
             place_list.append(pickup_row["place"])
+            posi_nega_score_re.append(pickup_row["posi_nega_score_re"])
+            satisfy_score_re.append(pickup_row["satisfy_score_re"])
+            insta_score_re.append(pickup_row["insta_score_re"])
+            calm_score_re.append(pickup_row["calm_score_re"])
+            service_score_re.append(pickup_row["service_score_re"])
 
     result = {
         "store_name": store_name,
@@ -100,7 +115,12 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
         "pickup_count": count,
         "len" : sorted_df["weighted_sum"].count(),
         "range_money": range_money,
-        "place_list":place_list
+        "place_list":place_list,
+        "posi_nega_score_re":posi_nega_score_re,
+        "satisfy_score_re":satisfy_score_re,
+        "insta_score_re":insta_score_re,
+        "calm_score_re":calm_score_re,
+        "service_score_re":service_score_re
     }
 
     return result
