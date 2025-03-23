@@ -85,6 +85,9 @@ span {
     position: relative;
     font-family:"serif"; /* メニューの基準位置 */
   }
+  footer {
+    font-family:"serif"; 
+  }
 
   /* ハンバーガーメニューのボタンを表示 */
   .hamburger-btn {
