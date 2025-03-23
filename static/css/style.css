@@ -1352,6 +1352,9 @@ select {
     border-radius: 100vh;
     border: 0;
   }
+  .result_img img:hover {
+    transform:none;
+  }
   .result_btn2 button {
     cursor: pointer;
     text-align: center;
