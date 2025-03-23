@@ -1328,15 +1328,15 @@ select {
   .result_btn{
     display: inline-block;
     overflow: hidden;
-    width: 60vw;
+    width: 100vw;
     padding: 0;
   }
   .result_btn img{
     margin: 0 auto;
     display: block;
     border-radius: 2px;
-    width: 20vw;
-    height: 20vw;
+    width: 33vw;
+    height: 33vw;
     object-fit:cover;
   }
   .result_btn2 {
