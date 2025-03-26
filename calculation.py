@@ -37,7 +37,10 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
 
     # moneyでフィルター
     if max_money and max_money != "all":
-        df = df[(df["max_money"] <= float(max_money)) & (df["max_money"] > float(max_money)-1000)]
+        df = df[
+            (df["max_money"] <= float(max_money))
+            & (df["max_money"] > float(max_money) - 1000)
+        ]
 
     # placeでフィルター
     if place and place != "all":
@@ -45,7 +48,7 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
 
     # データがフィルターで空になった場合の処理
     if df.empty:
-        return False
+        return {"len": 0, "pickup_count": count}  # 空のデータでも辞書形式で返す
 
     # 結果を降順に並び替え
     sorted_df = df.sort_values(by="weighted_sum", ascending=False)
@@ -61,13 +64,8 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
     link_url = []
     range_money = []
     place_list = []
-    posi_nega_score_re = []
-    satisfy_score_re = []
-    insta_score_re = []
-    calm_score_re = []
-    service_score_re = []    
     if sorted_df["weighted_sum"].count() - count < 10:
-        for i in range(0+count,sorted_df["weighted_sum"].count()):
+        for i in range(0 + count, sorted_df["weighted_sum"].count()):
             pickup_row = sorted_df.iloc[i]
             store_name.append(pickup_row["store_name"])
             picture_url0.append(pickup_row["picture_url0"])
@@ -79,13 +77,8 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
             link_url.append(pickup_row["link_url"])
             range_money.append(pickup_row["range_money"])
             place_list.append(pickup_row["place"])
-            posi_nega_score_re.append(pickup_row["posi_nega_score_re"])
-            satisfy_score_re.append(pickup_row["satisfy_score_re"])
-            insta_score_re.append(pickup_row["insta_score_re"])
-            calm_score_re.append(pickup_row["calm_score_re"])
-            service_score_re.append(pickup_row["service_score_re"])
-    else:      
-        for i in range(0+count,10+count):
+    else:
+        for i in range(0 + count, 10 + count):
             pickup_row = sorted_df.iloc[i]
             store_name.append(pickup_row["store_name"])
             picture_url0.append(pickup_row["picture_url0"])
@@ -97,11 +90,6 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
             link_url.append(pickup_row["link_url"])
             range_money.append(pickup_row["range_money"])
             place_list.append(pickup_row["place"])
-            posi_nega_score_re.append(pickup_row["posi_nega_score_re"])
-            satisfy_score_re.append(pickup_row["satisfy_score_re"])
-            insta_score_re.append(pickup_row["insta_score_re"])
-            calm_score_re.append(pickup_row["calm_score_re"])
-            service_score_re.append(pickup_row["service_score_re"])
 
     result = {
         "store_name": store_name,
@@ -113,14 +101,9 @@ def calculate_weightedsum(weights, max_money=None, place=None, count=None):
         "picture_url5": picture_url5,
         "link_url": link_url,
         "pickup_count": count,
-        "len" : sorted_df["weighted_sum"].count(),
+        "len": sorted_df["weighted_sum"].count(),
         "range_money": range_money,
-        "place_list":place_list,
-        "posi_nega_score_re":posi_nega_score_re,
-        "satisfy_score_re":satisfy_score_re,
-        "insta_score_re":insta_score_re,
-        "calm_score_re":calm_score_re,
-        "service_score_re":service_score_re
+        "place_list": place_list,
     }
 
     return result

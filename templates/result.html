@@ -1,11 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
 <main class="result_main">
+  {% if output["len"] == 0 %}
+  <p>この条件の居酒屋はありません</p>
+  {% endif %}
   {% if output["len"]-output["pickup_count"] >=1 %}
   <div class="result_item" id="result1">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+1 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][0]}}</span></h2>
+    <a class="result_btn_name" href="{{output["link_url"][0]}}" target="_blank">
+      <div class="result_name">
+      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+1 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][0]}}</span> ▸</h2>
     </div>
+    </a>
     <a class="result_btn" href="{{output["link_url"][0]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][0]}}" alt="">
@@ -44,9 +49,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=2 %}
   <div class="result_item" id="result2">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+2 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][1]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][1]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+2 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][1]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][1]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][1]}}" alt="">
@@ -76,9 +84,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=3 %}
   <div class="result_item" id="result3">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+3 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][2]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][2]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+3 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][2]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][2]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][2]}}" alt="">
@@ -109,9 +120,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=4 %}
   <div class="result_item" id="result4">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+4 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][3]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][3]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+4 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][3]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][3]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][3]}}" alt="">
@@ -142,9 +156,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=5 %}
   <div class="result_item" id="result5">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+5 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][4]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][4]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+5 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][4]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][4]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][4]}}" alt="">
@@ -175,9 +192,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=6 %}
   <div class="result_item" id="result6">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+6 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][5]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][5]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+6 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][5]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][5]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][5]}}" alt="">
@@ -208,9 +228,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=7 %}
   <div class="result_item" id="result7">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+7 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][6]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][6]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+7 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][6]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][6]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][6]}}" alt="">
@@ -240,10 +263,13 @@
   </div>
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=8 %}
-  <div class="result_item" id="result8">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+8 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][7]}}</span></h2>
-    </div>
+  <div class="result_item" id="result8">]
+    <a class="result_btn_name" href="{{output["link_url"][7]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+8 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][7]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][7]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][7]}}" alt="">
@@ -274,9 +300,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=9 %}
   <div class="result_item" id="result9">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+9 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][8]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][8]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+9 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][8]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][8]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][8]}}" alt="">
@@ -307,9 +336,12 @@
   {% endif %}
   {% if output["len"]-output["pickup_count"] >=10 %}
   <div class="result_item" id="result10">
-    <div class="result_name">
-      <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+10 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][9]}}</span></h2>
-    </div>
+    <a class="result_btn_name" href="{{output["link_url"][9]}}" target="_blank">
+      <div class="result_name">
+        <h2><span>あなたの気分に</span><span id="count">{{ output["pickup_count"]+10 }}</span>番目に近いのは</span></h2><br><h2><span class="bold">{{output["store_name"][9]}}</span> ▸</h2>
+      </div>
+    </a>
+    
     <a class="result_btn" href="{{output["link_url"][9]}}" target="_blank">
       <div class="result_img">
         <img src="{{output["picture_url0"][9]}}" alt="">
@@ -354,7 +386,7 @@
     </div>  
     {% endif %} 
     <div class="result_btn2" >
-      <a href="/calc">重要度を編集</a>
+      <a href="/calc">優先度を編集</a>
     </div>
     <div class="result_btn2" >
       <form action="/result_more" method="POST">

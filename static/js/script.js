@@ -27,3 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // 初回ロード時のメニュー表示を設定
     updateMenuDisplay();
 });
+document.querySelectorAll('.result_btn').forEach(button => {
+    button.addEventListener('click', () => {
+      button.style.opacity = '0.7';
+      setTimeout(() => {
+        button.style.opacity = '1';
+      }, 200);
+    });
+  });

@@ -301,7 +301,7 @@ topの設定
     background: transparent;
   }
   .click_btn input:hover {
-    background: transparent;
+    background: linear-gradient(90deg, rgb(255, 231, 217), rgb(255, 196, 196));
   }
 }
 
@@ -1145,12 +1145,15 @@ select {
   margin: 10px auto;
   font-size: 17px;
 }
-.result_name {
+
+.result_btn_name {
+  display: block;
   width: 80%;
   max-width: 600px;
+  line-height:normal;
+  margin: 20px auto;
   border-bottom: black 3px  solid;
   border-top: black 3px  solid;
-  margin: 20px auto;
 }
 .result_name br {
   display: none;
@@ -1329,14 +1332,16 @@ select {
     margin: 0 auto;
     font-size: 13px;
   }
-  .result_name {
+  .result_btn_name {
+    display: block;
     width: 80%;
+    max-width: 600px;
+    line-height:normal;
+    margin: 20px auto;
     border-bottom: black 3px  solid;
     border-top: black 3px  solid;
-    margin: 15px auto;
-    padding: 10px;
   }
-  .result_name h2 {
+  .result_btn_name h2 {
     font-weight: normal;
     margin: 0;
   }
@@ -1352,8 +1357,13 @@ select {
     border-radius: 2px;
     width: 33vw;
     height: 33vw;
-    object-fit:cover;
+    object-fit:cover; 
   }
+  .result_btn:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  
   .result_btn2 {
     margin: 0 5px;
   }
